@@ -1,0 +1,455 @@
+QUERIES
+1.Display list pf all customers having age between 18 yrs to 35 yrs.
+
+mysql> select* from Customer where age between 18 and 35;
++---------+-------------------+--------+------+--------------+------------+
+| cust_id | custname          | gender | age  | address      | ph_no      |
++---------+-------------------+--------+------+--------------+------------+
+|     101 | poosha mhetre     | female |   19 | ichalkaranji | 9876542310 |
+|     102 | karuna kadam      | female |   20 | pune         | 7776542310 |
+|     103 | samiksha joglekar | female |   19 | kothrud-pune | 8856542310 |
+|     104 | pragati mulik     | female |   20 | mumbai       | 9867892310 |
+|     105 | aditya            | male   |   23 | vadgaon      | 9745241345 |
+|     106 | ketan             | male   |   26 | benglore     | 7758013991 |
+|     107 | soham             | male   |   30 | kolhapur     | 7756534991 |
+|     108 | bhakti            | female |   25 | sangli       | 9123013991 |
+|     109 | yash              | male   |   22 | chennai      | 9645113991 |
+|     110 | arti              | female |   35 | vardha       | 7758852461 |
+|     112 | siddhi            | female |   32 | barshi       | 8758013991 |
+|     126 | tanvi             | female |   28 | benglore     | 9421342134 |
+|     127 | sanskriti         | female |   34 | goa          | 9898989898 |
+|     129 | rohit             | male   |   29 | nanded       | 6789346798 |
++---------+-------------------+--------+------+--------------+------------+
+14 rows in set (0.00 sec)
+			
+2.Display list of all employees whose name contain ‘I’ in their name.
+ 
+mysql> select* from Employees where emp_name like '%I%';
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+| emp_id | emp_name | emp_role     | emp_sal  | shift  | shift_time | emp_phno   | emp_addr | empage |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+|   1003 | Riya     | cook         | 13000.00 | second | 3pm-11pm   | 9871045724 | jalgaon  |     32 |
+|   1004 | Nilesh   | cook         | 13000.00 | second | 3pm-11pm   | 8778478758 | vita     |     27 |
+|   1005 | Nitin    | cook         | 15000.00 | third  | 11pm-7am   | 9435657846 | palus    |     30 |
+|   1009 | Kiran    | room_service | 20000.00 | first  | 7am-3pm    | 8785485743 | uti      |     32 |
+|   1011 | Vivek    | room_service | 18000.00 | second | 3pm-11pm   | 8658746584 | miraj    |     27 |
+|   1012 | Shital   | room_service | 18000.00 | second | 3pm-11pm   | 7878783847 | kolhapur |     25 |
+|   1014 | Rushi    | room_service | 15000.00 | third  | 11pm-7am   | 8855656435 | raigad   |     35 |
+|   1016 | Dilip    | cleaning     | 13000.00 | first  | 7am-3pm    | 9786746758 | solapur  |     28 |
+|   1018 | Rashmi   | cleaning     | 13000.00 | first  | 7am-3pm    | 8785485743 | narhe    |     32 |
+|   1019 | Amir     | cleaning     | 10000.00 | second | 3pm-11pm   | 8758947584 | bhosri   |     29 |
+|   1024 | Manisha  | cleaning     | 12000.00 | third  | 11pm-7am   | 9999999999 | yavatmal |     37 |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+11 rows in set (0.00 sec)
+
+3.Display list of all employees with descending order of age.
+   
+mysql> select emp_id, emp_name, empage from Employees order by empage desc ;
++--------+----------+--------+
+| emp_id | emp_name | empage |
++--------+----------+--------+
+|   1015 | Kedar    |     37 |
+|   1024 | Manisha  |     37 |
+|   1002 | Sanjay   |     35 |
+|   1014 | Rushi    |     35 |
+|   1023 | Akash    |     35 |
+|   1013 | Sandesh  |     33 |
+|   1022 | Mukesh   |     33 |
+|   1003 | Riya     |     32 |
+|   1009 | Kiran    |     32 |
+|   1018 | Rashmi   |     32 |
+|   1005 | Nitin    |     30 |
+|   1008 | Ramesh   |     30 |
+|   1017 | Jay      |     30 |
+|   1010 | Varsha   |     29 |
+|   1019 | Amir     |     29 |
+|   1001 | Archana  |     28 |
+|   1007 | Suresh   |     28 |
+|   1016 | Dilip    |     28 |
+|   1004 | Nilesh   |     27 |
+|   1011 | Vivek    |     27 |
+|   1020 | Shubham  |     27 |
+|   1012 | Shital   |     25 |
+|   1021 | Madhura  |     25 |
++--------+----------+--------+
+23 rows in set (0.00 sec)
+
+4.Display list of all employees with descending order of their salary.
+
+mysql> select* from Employees order by emp_sal desc;
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+| emp_id | emp_name | emp_role     | emp_sal  | shift  | shift_time | emp_phno   | emp_addr | empage |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+|   1007 | Suresh   | room_service | 20000.00 | first  | 7am-3pm    | 9786746758 | jaipur   |     28 |
+|   1008 | Ramesh   | room_service | 20000.00 | first  | 7am-3pm    | 8776768743 | banaras  |     30 |
+|   1009 | Kiran    | room_service | 20000.00 | first  | 7am-3pm    | 8785485743 | uti      |     32 |
+|   1010 | Varsha   | room_service | 18000.00 | second | 3pm-11pm   | 8758947584 | tasgaon  |     29 |
+|   1011 | Vivek    | room_service | 18000.00 | second | 3pm-11pm   | 8658746584 | miraj    |     27 |
+|   1012 | Shital   | room_service | 18000.00 | second | 3pm-11pm   | 7878783847 | kolhapur |     25 |
+|   1005 | Nitin    | cook         | 15000.00 | third  | 11pm-7am   | 9435657846 | palus    |     30 |
+|   1006 | Pavan    | cook         | 15000.00 | third  | 11pm-7am   | 7754758475 | pune     |     38 |
+|   1013 | Sandesh  | room_service | 15000.00 | third  | 11pm-7am   | 7587583475 | pune     |     33 |
+|   1014 | Rushi    | room_service | 15000.00 | third  | 11pm-7am   | 8855656435 | raigad   |     35 |
+|   1015 | Kedar    | room_service | 15000.00 | third  | 11pm-7am   | 9999999999 | miraj    |     37 |
+|   1003 | Riya     | cook         | 13000.00 | second | 3pm-11pm   | 9871045724 | jalgaon  |     32 |
+|   1004 | Nilesh   | cook         | 13000.00 | second | 3pm-11pm   | 8778478758 | vita     |     27 |
+|   1016 | Dilip    | cleaning     | 13000.00 | first  | 7am-3pm    | 9786746758 | solapur  |     28 |
+|   1017 | Jay      | cleaning     | 13000.00 | first  | 7am-3pm    | 8776768743 | kolhapur |     30 |
+|   1018 | Rashmi   | cleaning     | 13000.00 | first  | 7am-3pm    | 8785485743 | narhe    |     32 |
+|   1022 | Mukesh   | cleaning     | 12000.00 | third  | 11pm-7am   | 7587583475 | pali     |     33 |
+|   1023 | Akash    | cleaning     | 12000.00 | third  | 11pm-7am   | 8855656435 | surat    |     35 |
+|   1024 | Manisha  | cleaning     | 12000.00 | third  | 11pm-7am   | 9999999999 | yavatmal |     37 |
+|   1001 | Archana  | cook         | 10000.00 | first  | 7am-3pm    | 9834623621 | vita     |     28 |
+|   1002 | Sanjay   | cook         | 10000.00 | first  | 7am-3pm    | 7887776756 | rajapur  |     35 |
+|   1019 | Amir     | cleaning     | 10000.00 | second | 3pm-11pm   | 8758947584 | bhosri   |     29 |
+|   1020 | Shubham  | cleaning     | 10000.00 | second | 3pm-11pm   | 8658746584 | karad    |     27 |
+|   1021 | Madhura  | cleaning     | 10000.00 | second | 3pm-11pm   | 7878783847 | sangli   |     25 |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+24 rows in set (0.00 sec)
+ 
+5.Display list of rooms with different types and their count.
+mysql> select type,count(*) from rooms group by type;
++-------------------+----------+
+| type              | count(*) |
++-------------------+----------+
+| Single room       |        9 |
+| Double room       |        8 |
+| Deluxe room       |        7 |
+| Super deluxe room |        2 |
+| Tripple room      |        9 |
++-------------------+----------+
+5 rows in set (0.00 sec)
+
+6.Display different jobs of employees.
+
+mysql> Select distinct emp_role from Employees;
++--------------+
+| emp_role     |
++--------------+
+| cook         |
+| room_service |
+| cleaning     |
++--------------+
+3 rows in set (0.00 sec)
+
+7.Display name of customer whose bill is maximum.
+  mysql> select* from booking;
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| Checkin    | Checkout   | custname | AC   | Wifi | CarRental | CompBF | Pool | MaxPrice | BookNow |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| 2022-02-12 | 2022-02-18 | yash     |    0 |    0 |         0 |      0 |    0 |    12000 |       0 |
+| 2022-03-12 | 2022-03-15 | spoorti  |    1 |    1 |         1 |      1 |    1 |    15000 |       0 |
+| 2022-04-02 | 2022-04-12 | akanksha |    1 |    1 |         1 |      1 |    0 |    35000 |       0 |
+| 2022-05-15 | 2022-05-16 | satyam   |    1 |    0 |         1 |      1 |    0 |    11000 |       0 |
+| 2022-01-15 | 2022-02-04 | ketan    |    1 |    1 |         1 |      1 |    0 |    68000 |       0 |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select custname, max(MaxPrice) from booking ;
++-----------+---------------+
+| custname  | max(MaxPrice) |
++-----------+---------------+
+| ketan     |         68000 |
++-----------+---------------+
+1 row in set (0.04 sec)
+
+
+8.Display names of chefs and room service emps.
+   mysql> select emp_id, emp_name, emp_role from Employees where emp_role='cook' union select emp_id, emp_name, emp_role from Employees where emp_role='room_service';
++--------+----------+--------------+
+| emp_id | emp_name | emp_role     |
++--------+----------+--------------+
+|   1001 | Archana  | cook         |
+|   1002 | Sanjay   | cook         |
+|   1003 | Riya     | cook         |
+|   1004 | Nilesh   | cook         |
+|   1005 | Nitin    | cook         |
+|   1006 | Pavan    | cook         |
+|   1007 | Suresh   | room_service |
+|   1008 | Ramesh   | room_service |
+|   1009 | Kiran    | room_service |
+|   1010 | Varsha   | room_service |
+|   1011 | Vivek    | room_service |
+|   1012 | Shital   | room_service |
+|   1013 | Sandesh  | room_service |
+|   1014 | Rushi    | room_service |
+|   1015 | Kedar    | room_service |
++--------+----------+--------------+
+15 rows in set (0.01 sec)
+
+9.customers stayed more than 10 days 
+mysql> select* from booking where datediff(Checkout,Checkin)>10;
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| Checkin    | Checkout   | custname | AC   | Wifi | CarRental | CompBF | Pool | MaxPrice | BookNow |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| 2022-01-15 | 2022-02-04 | ketan    |    1 |    1 |         1 |      1 |    0 |    68000 |       0 |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+1 row in set (0.00 sec)
+
+10. Create view containing customer id , customer name ,customer phno.
+
+mysql> Create view Cust_info as select cust_id, custname, ph_no from Customer;
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> select* from Cust_info;
++---------+-------------------+------------+
+| cust_id | custname          | ph_no      |
++---------+-------------------+------------+
+|     101 | poosha mhetre     | 9876542310 |
+|     102 | karuna kadam      | 7776542310 |
+|     103 | samiksha joglekar | 8856542310 |
+|     104 | pragati mulik     | 9867892310 |
+|     105 | aditya            | 9745241345 |
+|     106 | ketan             | 7758013991 |
+|     107 | soham             | 7756534991 |
+|     108 | bhakti            | 9123013991 |
+|     109 | yash              | 9645113991 |
+|     110 | arti              | 7758852461 |
+|     111 | spoorti           | 7528013991 |
+|     112 | siddhi            | 8758013991 |
+|     113 | satyam            | 9878013991 |
+|     114 | sagar             | 6745013991 |
+|     115 | vinayak           | 7758937643 |
+|     116 | aman              | 9812877391 |
+|     117 | disha             | 9876543991 |
+|     118 | akanksha          | 9420513991 |
+|     119 | anushka           | 7182513991 |
+|     120 | ravi              | 6548113991 |
+|     121 | sunil             | 7775012993 |
+|     122 | anil              | 9822865411 |
+|     123 | mahesh            | 9421117345 |
+|     124 | avinash           | 9421728447 |
+|     125 | prakash           | 9953888125 |
+|     126 | tanvi             | 9421342134 |
+|     127 | sanskriti         | 9898989898 |
+|     128 | pranav            | 7687768754 |
+|     129 | rohit             | 6789346798 |
+|     130 | abhijeet          | 9345216767 |
++---------+-------------------+------------+
+30 rows in set (0.00 sec)
+
+11.Create table Ex_emp (Empid, EmpName, Emprole, EmpPhno, Empaddr,RetireDt)
+   Write trigger which add employee to Ex_emp table after his retirement.
+
+mysql> create table Ex_emp(Empid int primary key,EmpName varchar(50),Emprole varchar(30),EmpPhno dec(10),Empaddr varchar(50),RetireDt date );
+Query OK, 0 rows affected (0.70 sec)
+
+mysql> delimiter //
+mysql> Create trigger t1 after delete on Employees for each row
+    -> Begin
+    -> Insert into Ex_emp values(old.emp_id, old.emp_name, old.emp_role,old.emp_phno, old.emp_addr, Sysdate());
+    -> End //
+Query OK, 0 rows affected (0.34 sec)
+mysql> Delimiter ;
+mysql> delete from Employees where emp_name='Pavan';
+Query OK, 1 row affected (0.15 sec)
+
+mysql> select emp_name from Employees;
++----------+
+| emp_name |
++----------+
+| Archana  |
+| Sanjay   |
+| Riya     |
+| Nilesh   |
+| Nitin    |
+| Suresh   |
+| Ramesh   |
+| Kiran    |
+| Varsha   |
+| Vivek    |
+| Shital   |
+| Sandesh  |
+| Rushi    |
+| Kedar    |
+| Dilip    |
+| Jay      |
+| Rashmi   |
+| Amir     |
+| Shubham  |
+| Madhura  |
+| Mukesh   |
+| Akash    |
+| Manisha  |
++----------+
+23 rows in set (0.00 sec)
+
+mysql> select* from Ex_emp;
++-------+---------+---------+------------+---------+------------+
+| Empid | EmpName | Emprole | EmpPhno    | Empaddr | RetireDt   |
++-------+---------+---------+------------+---------+------------+
+|  1006 | Pavan   | cook    | 7754758475 | pune    | 2022-06-02 |
++-------+---------+---------+------------+---------+------------+
+1 row in set (0.00 sec)
+
+
+
+12.Create index on custname.
+
+mysql> set profiling=1;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> select* from Customer where custname='abhijeet';
++---------+----------+--------+------+---------+------------+
+| cust_id | custname | gender | age  | address | ph_no      |
++---------+----------+--------+------+---------+------------+
+|     130 | abhijeet | male   |   59 | pune    | 9345216767 |
++---------+----------+--------+------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> create index i on Customer(custname);
+Query OK, 0 rows affected (0.57 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select* from Customer where custname='abhijeet';
++---------+----------+--------+------+---------+------------+
+| cust_id | custname | gender | age  | address | ph_no      |
++---------+----------+--------+------+---------+------------+
+|     130 | abhijeet | male   |   59 | pune    | 9345216767 |
++---------+----------+--------+------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> show profiles;
++----------+------------+-------------------------------------------------+
+| Query_ID | Duration   | Query                                           |
++----------+------------+-------------------------------------------------+
+|        1 | 0.00063175 | select* from Customer where custname='abhijeet' |
+|        2 | 0.56800700 | create index i on Customer(custname)            |
+|        3 | 0.00083325 | select* from Customer where custname='abhijeet' |
++----------+------------+-------------------------------------------------+
+3 rows in set, 1 warning (0.00 sec)
+
+
+13. number of employees working in each shift
+
+mysql> select shift ,count(*) from Employees group by shift;
++--------+----------+
+| shift  | count(*) |
++--------+----------+
+| first  |        8 |
+| second |        8 |
+| third  |        7 |
++--------+----------+
+3 rows in set (0.00 sec)
+
+14.display customer id along with their name and bill amt (Cartesian join)
+
+mysql> select distinct cust_id,booking.custname,MaxPrice from booking, Customer where booking.custname=Customer.custname;
++---------+----------+----------+
+| cust_id | custname | MaxPrice |
++---------+----------+----------+
+|     109 | yash     |    12000 |
+|     111 | spoorti  |    15000 |
+|     118 | akanksha |    35000 |
+|     113 | satyam   |    11000 |
+|     106 | ketan    |    68000 |
++---------+----------+----------+
+5 rows in set (0.01 sec)
+
+15.display customer id along with their name and bill amt(inner join )
+
+mysql> select cust_id, booking.custname, MaxPrice from Customer inner join booking where Customer.custname = booking.custname;
++---------+----------+----------+
+| cust_id | custname | MaxPrice |
++---------+----------+----------+
+|     109 | yash     |    12000 |
+|     111 | spoorti  |    15000 |
+|     118 | akanksha |    35000 |
+|     113 | satyam   |    11000 |
+|     106 | ketan    |    68000 |
++---------+----------+----------+
+5 rows in set (0.00 sec)
+
+16.display customer id along with their name and bill amt(right outerjoin )
+
+
+mysql> select* from Customer right outer join booking on Customer.custname=booking.custname;
++---------+----------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| cust_id | custname | gender | age  | address           | ph_no      | Checkin    | Checkout   | custname | AC   | Wifi | CarRental | CompBF | Pool | MaxPrice | BookNow |
++---------+----------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+|     109 | yash     | male   |   22 | chennai           | 9645113991 | 2022-02-12 | 2022-02-18 | yash     |    0 |    0 |         0 |      0 |    0 |    12000 |       0 |
+|     111 | spoorti  | female |   40 | pimpari-chinchwad | 7528013991 | 2022-03-12 | 2022-03-15 | spoorti  |    1 |    1 |         1 |      1 |    1 |    15000 |       0 |
+|     118 | akanksha | female |   45 | yavatmal          | 9420513991 | 2022-04-02 | 2022-04-12 | akanksha |    1 |    1 |         1 |      1 |    0 |    35000 |       0 |
+|     113 | satyam   | male   |   40 | benglore          | 9878013991 | 2022-05-15 | 2022-05-16 | satyam   |    1 |    0 |         1 |      1 |    0 |    11000 |       0 |
+|     106 | ketan    | male   |   26 | benglore          | 7758013991 | 2022-01-15 | 2022-02-04 | ketan    |    1 |    1 |         1 |      1 |    0 |    68000 |       0 |
+|    NULL | NULL     | NULL   | NULL | NULL              |       NULL | 2022-05-15 | 2022-05-16 | kartik   |    1 |    0 |         1 |      1 |    0 |    11000 |       0 |
++---------+----------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+6 rows in set (0.00 sec)
+
+17.display customer id along with their name and bill amt(left outer join )
+
+mysql> select* from Customer left outer join booking on Customer.custname=booking.custname;
++---------+-------------------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| cust_id | custname          | gender | age  | address           | ph_no      | Checkin    | Checkout   | custname | AC   | Wifi | CarRental | CompBF | Pool | MaxPrice | BookNow |
++---------+-------------------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+|     101 | poosha mhetre     | female |   19 | ichalkaranji      | 9876542310 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     102 | karuna kadam      | female |   20 | pune              | 7776542310 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     103 | samiksha joglekar | female |   19 | kothrud-pune      | 8856542310 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     104 | pragati mulik     | female |   20 | mumbai            | 9867892310 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     105 | aditya            | male   |   23 | vadgaon           | 9745241345 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     106 | ketan             | male   |   26 | benglore          | 7758013991 | 2022-01-15 | 2022-02-04 | ketan    |    1 |    1 |         1 |      1 |    0 |    68000 |       0 |
+|     107 | soham             | male   |   30 | kolhapur          | 7756534991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     108 | bhakti            | female |   25 | sangli            | 9123013991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     109 | yash              | male   |   22 | chennai           | 9645113991 | 2022-02-12 | 2022-02-18 | yash     |    0 |    0 |         0 |      0 |    0 |    12000 |       0 |
+|     110 | arti              | female |   35 | vardha            | 7758852461 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     111 | spoorti           | female |   40 | pimpari-chinchwad | 7528013991 | 2022-03-12 | 2022-03-15 | spoorti  |    1 |    1 |         1 |      1 |    1 |    15000 |       0 |
+|     112 | siddhi            | female |   32 | barshi            | 8758013991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     113 | satyam            | male   |   40 | benglore          | 9878013991 | 2022-05-15 | 2022-05-16 | satyam   |    1 |    0 |         1 |      1 |    0 |    11000 |       0 |
+|     114 | sagar             | male   |   38 | mumbai            | 6745013991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     115 | vinayak           | male   |   16 | mumbai            | 7758937643 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     116 | aman              | male   |   52 | satara            | 9812877391 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     117 | disha             | female |   14 | karad             | 9876543991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     118 | akanksha          | female |   45 | yavatmal          | 9420513991 | 2022-04-02 | 2022-04-12 | akanksha |    1 |    1 |         1 |      1 |    0 |    35000 |       0 |
+|     119 | anushka           | female |   51 | bhadole           | 7182513991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     120 | ravi              | male   |   55 | solapur           | 6548113991 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     121 | sunil             | male   |   58 | karad             | 7775012993 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     122 | anil              | male   |   60 | retare            | 9822865411 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     123 | mahesh            | male   |   65 | budhgaon          | 9421117345 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     124 | avinash           | male   |   70 | pune              | 9421728447 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     125 | prakash           | male   |   73 | pimpari-chinchwad | 9953888125 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     126 | tanvi             | female |   28 | benglore          | 9421342134 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     127 | sanskriti         | female |   34 | goa               | 9898989898 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     128 | pranav            | male   |   40 | jaipur            | 7687768754 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     129 | rohit             | male   |   29 | nanded            | 6789346798 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
+|     130 | abhijeet          | male   |   59 | pune              | 9345216767 | NULL       | NULL       | NULL     | NULL | NULL |      NULL |   NULL | NULL |     NULL |    NULL |
++---------+-------------------+--------+------+-------------------+------------+------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+30 rows in set (0.00 sec)
+
+18. display no of male customers
+
+mysql> create procedure total_cont(IN Gender varchar(8),OUT cnt int)
+    -> begin
+    -> select count(*) into cnt from Customer where gender = Gender;
+    -> end //
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> delimiter ;
+mysql> call total_cont('female',@NoOfGender);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select @NoOfGender;
++-------------+
+| @NoOfGender |
++-------------+
+|          30 |
++-------------+
+1 row in set (0.00 sec)
+
+19. display no of females 
+mysql> create procedure total_cont(IN Gender varchar(8),OUT cnt int)
+    -> begin
+    -> select count(*) into cnt from Customer where gender = Gender;
+    -> end //
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> delimiter ;
+mysql> call total_cont('male',@NoOfGender);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select @NoOfGender;
++-------------+
+| @NoOfGender |
++-------------+
+|          30 |
++-------------+
+1 row in set (0.00 sec)

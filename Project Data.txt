@@ -1,0 +1,311 @@
+mysql> create database DBMS_Miniproject;
+Query OK, 1 row affected (0.23 sec)
+
+mysql> use DBMS_Miniproject;
+Database changed
+
+mysql> create table Customer(cust_id int primary key,custname varchar(50),gender varchar(30),age int,address varchar(50),ph_no dec(10));
+Query OK, 0 rows affected (0.54 sec)
+
+insert into Customer values('101','poosha mhetre','female','19','ichalkaranji','9876542310');
+insert into Customer values('102','karuna kadam','female','20','pune','7776542310');
+insert into Customer values('103','samiksha joglekar','female','19','kothrud-pune','8856542310');
+insert into Customer values('104','pragati mulik','female','20','mumbai','9867892310');
+insert into Customer values('105','aditya ','male','23','vadgaon','9745241345');
+insert into Customer values('106','ketan','male','26','benglore','7758013991');
+insert into Customer values('107','soham','male','30','kolhapur','7756534991');
+insert into Customer values('108','bhakti','female','25','sangli','9123013991');
+insert into Customer values('109','yash','male','22','chennai','9645113991');
+insert into Customer values('110','arti','female','35','vardha','7758852461');
+insert into Customer values('111','spoorti','female','40','pimpari-chinchwad','7528013991');
+insert into Customer values('112','siddhi','female','32','barshi','8758013991');
+insert into Customer values('113','satyam','male','40','benglore','9878013991');
+insert into Customer values('114','sagar','male','38','mumbai','6745013991');
+insert into Customer values('115','vinayak','male','16','mumbai','7758937643');
+insert into Customer values('116','aman','male','52','satara','9812877391');
+insert into Customer values('117','disha','female','14','karad','9876543991');
+insert into Customer values('118','akanksha','female','45','yavatmal','9420513991');
+insert into Customer values('119','anushka','female','51','bhadole','7182513991');
+insert into Customer values('120','ravi','male','55','solapur','6548113991');
+insert into Customer values('122','anil','male','60','retare','9822865411');
+insert into Customer values('123','mahesh','male','65','budhgaon','9421117345');
+insert into Customer values('124','avinash','male','70','pune','9421728447');
+insert into Customer values('125','prakash','male','73','pimpari-chinchwad','9953888125');
+insert into Customer values('126','tanvi','female','28','benglore','9421342134');
+insert into Customer values('127','sanskriti','female','34','goa','9898989898');
+insert into Customer values('128','pranav','male','40','jaipur','7687768754');
+insert into Customer values('129','rohit','male','29','nanded','6789346798');
+insert into Customer values('130','abhijeet','male','59','pune','9345216767');
+
+mysql> select* from Customer;
++---------+-------------------+--------+------+-------------------+------------+
+| cust_id | custname          | gender | age  | address           | ph_no      |
++---------+-------------------+--------+------+-------------------+------------+
+|     101 | poosha mhetre     | female |   19 | ichalkaranji      | 9876542310 |
+|     102 | karuna kadam      | female |   20 | pune              | 7776542310 |
+|     103 | samiksha joglekar | female |   19 | kothrud-pune      | 8856542310 |
+|     104 | pragati mulik     | female |   20 | mumbai            | 9867892310 |
+|     105 | aditya            | male   |   23 | vadgaon           | 9745241345 |
+|     106 | ketan             | male   |   26 | benglore          | 7758013991 |
+|     107 | soham             | male   |   30 | kolhapur          | 7756534991 |
+|     108 | bhakti            | female |   25 | sangli            | 9123013991 |
+|     109 | yash              | male   |   22 | chennai           | 9645113991 |
+|     110 | arti              | female |   35 | vardha            | 7758852461 |
+|     111 | spoorti           | female |   40 | pimpari-chinchwad | 7528013991 |
+|     112 | siddhi            | female |   32 | barshi            | 8758013991 |
+|     113 | satyam            | male   |   40 | benglore          | 9878013991 |
+|     114 | sagar             | male   |   38 | mumbai            | 6745013991 |
+|     115 | vinayak           | male   |   16 | mumbai            | 7758937643 |
+|     116 | aman              | male   |   52 | satara            | 9812877391 |
+|     117 | disha             | female |   14 | karad             | 9876543991 |
+|     118 | akanksha          | female |   45 | yavatmal          | 9420513991 |
+|     119 | anushka           | female |   51 | bhadole           | 7182513991 |
+|     120 | ravi              | male   |   55 | solapur           | 6548113991 |
+|     121 | sunil             | male   |   58 | karad             | 7775012993 |
+|     122 | anil              | male   |   60 | retare            | 9822865411 |
+|     123 | mahesh            | male   |   65 | budhgaon          | 9421117345 |
+|     124 | avinash           | male   |   70 | pune              | 9421728447 |
+|     125 | prakash           | male   |   73 | pimpari-chinchwad | 9953888125 |
+|     126 | tanvi             | female |   28 | benglore          | 9421342134 |
+|     127 | sanskriti         | female |   34 | goa               | 9898989898 |
+|     128 | pranav            | male   |   40 | jaipur            | 7687768754 |
+|     129 | rohit             | male   |   29 | nanded            | 6789346798 |
+|     130 | abhijeet          | male   |   59 | pune              | 9345216767 |
++---------+-------------------+--------+------+-------------------+------------+
+30 rows in set (0.00 sec)
+
+mysql> create table Employees(emp_id int primary key,emp_name varchar(50),emp_role varchar(30),emp_sal dec(10,2),shift varchar(20),shift_time varchar(20),emp_phno dec(10),emp_addr varchar(50),empage int);
+Query OK, 0 rows affected (0.39 sec)
+
+insert into Employees values(1001,"Archana","cook",10000,"first","7am-3pm",9834623621,"vita",28);
+insert into Employees values(1002,"Sanjay","cook",10000,"first","7am-3pm",7887776756,"rajapur",35); 
+insert into Employees values(1003,"Riya","cook",13000,"second","3pm-11pm",9871045724,"jalgaon",32);
+insert into Employees values(1004,"Nilesh","cook",13000,"second","3pm-11pm",8778478758,"vita",27);
+insert into Employees values(1005,"Nitin","cook",15000,"third","11pm-7am",9435657846,"palus",30);
+insert into Employees values(1006,"Pavan","cook",15000,"third","11pm-7am ",7754758475,"pune",38);
+insert into Employees values(1007,"Suresh","room_service",20000,"first","7am-3pm ",9786746758,"jaipur",28);
+insert into Employees values(1008,"Ramesh","room_service",20000,"first","7am-3pm ",8776768743,"banaras",30);
+insert into Employees values(1009,"Kiran","room_service",20000,"first","7am-3pm ",8785485743,"uti",32);
+insert into Employees values(1010,"Varsha","room_service",18000,"second","3pm-11pm ",8758947584,"tasgaon",29);
+insert into Employees values(1011,"Vivek","room_service",18000,"second","3pm-11pm ",8658746584,"miraj",27);
+insert into Employees values(1012,"Shital","room_service",18000,"second","3pm-11pm ",7878783847,"kolhapur",25);
+insert into Employees values(1013,"Sandesh","room_service",15000,"third","11pm-7am ",7587583475,"pune",33);
+insert into Employees values(1014,"Rushi","room_service",15000,"third","11pm-7am ",8855656435,"raigad",35);
+insert into Employees values(1015,"Kedar","room_service",15000,"third","11pm-7am ",9999999999,"miraj",37);
+insert into Employees values(1016,"Dilip","cleaning",13000,"first","7am-3pm ",9786746758,"solapur",28);
+insert into Employees values(1017,"Jay","cleaning",13000,"first","7am-3pm ",8776768743,"kolhapur",30);
+insert into Employees values(1018,"Rashmi","cleaning",13000,"first","7am-3pm ",8785485743,"narhe",32);
+insert into Employees values(1019,"Amir","cleaning",10000,"second","3pm-11pm ",8758947584,"bhosri",29);
+insert into Employees values(1020,"Shubham","cleaning",10000,"second","3pm-11pm ",8658746584,"karad",27);
+insert into Employees values(1021,"Madhura","cleaning",10000,"second","3pm-11pm ",7878783847,"sangli",25);
+insert into Employees values(1022,"Mukesh","cleaning",12000,"third","11pm-7am ",7587583475,"pali",33);
+insert into Employees values(1023,"Akash","cleaning",12000,"third","11pm-7am ",8855656435,"surat",35);
+insert into Employees values(1024,"Manisha","cleaning",12000,"third","11pm-7am ",9999999999,"yavatmal",37);
+
+mysql> select* from Employees;
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+| emp_id | emp_name | emp_role     | emp_sal  | shift  | shift_time | emp_phno   | emp_addr | empage |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+|   1001 | Archana  | cook         | 10000.00 | first  | 7am-3pm    | 9834623621 | vita     |     28 |
+|   1002 | Sanjay   | cook         | 10000.00 | first  | 7am-3pm    | 7887776756 | rajapur  |     35 |
+|   1003 | Riya     | cook         | 13000.00 | second | 3pm-11pm   | 9871045724 | jalgaon  |     32 |
+|   1004 | Nilesh   | cook         | 13000.00 | second | 3pm-11pm   | 8778478758 | vita     |     27 |
+|   1005 | Nitin    | cook         | 15000.00 | third  | 11pm-7am   | 9435657846 | palus    |     30 |
+|   1006 | Pavan    | cook         | 15000.00 | third  | 11pm-7am   | 7754758475 | pune     |     38 |
+|   1007 | Suresh   | room_service | 20000.00 | first  | 7am-3pm    | 9786746758 | jaipur   |     28 |
+|   1008 | Ramesh   | room_service | 20000.00 | first  | 7am-3pm    | 8776768743 | banaras  |     30 |
+|   1009 | Kiran    | room_service | 20000.00 | first  | 7am-3pm    | 8785485743 | uti      |     32 |
+|   1010 | Varsha   | room_service | 18000.00 | second | 3pm-11pm   | 8758947584 | tasgaon  |     29 |
+|   1011 | Vivek    | room_service | 18000.00 | second | 3pm-11pm   | 8658746584 | miraj    |     27 |
+|   1012 | Shital   | room_service | 18000.00 | second | 3pm-11pm   | 7878783847 | kolhapur |     25 |
+|   1013 | Sandesh  | room_service | 15000.00 | third  | 11pm-7am   | 7587583475 | pune     |     33 |
+|   1014 | Rushi    | room_service | 15000.00 | third  | 11pm-7am   | 8855656435 | raigad   |     35 |
+|   1015 | Kedar    | room_service | 15000.00 | third  | 11pm-7am   | 9999999999 | miraj    |     37 |
+|   1016 | Dilip    | cleaning     | 13000.00 | first  | 7am-3pm    | 9786746758 | solapur  |     28 |
+|   1017 | Jay      | cleaning     | 13000.00 | first  | 7am-3pm    | 8776768743 | kolhapur |     30 |
+|   1018 | Rashmi   | cleaning     | 13000.00 | first  | 7am-3pm    | 8785485743 | narhe    |     32 |
+|   1019 | Amir     | cleaning     | 10000.00 | second | 3pm-11pm   | 8758947584 | bhosri   |     29 |
+|   1020 | Shubham  | cleaning     | 10000.00 | second | 3pm-11pm   | 8658746584 | karad    |     27 |
+|   1021 | Madhura  | cleaning     | 10000.00 | second | 3pm-11pm   | 7878783847 | sangli   |     25 |
+|   1022 | Mukesh   | cleaning     | 12000.00 | third  | 11pm-7am   | 7587583475 | pali     |     33 |
+|   1023 | Akash    | cleaning     | 12000.00 | third  | 11pm-7am   | 8855656435 | surat    |     35 |
+|   1024 | Manisha  | cleaning     | 12000.00 | third  | 11pm-7am   | 9999999999 | yavatmal |     37 |
++--------+----------+--------------+----------+--------+------------+------------+----------+--------+
+24 rows in set (0.00 sec)
+
+mysql>create table rooms(room_no int Primary key,type varchar(30),price int,AC int,Wifi int,CarRental int,CompBF int,Pool int);
+Query OK, 0 rows affected (0.40 sec)
+
+mysql> insert into rooms values(1,"Single room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(2,"Double room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(3,"Deluxe room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(4,"Super deluxe room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(5,"Tripple room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(6,"Single room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into rooms values(7,"Single room",6400,1,1,1,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(8,"Single room",6400,0,0,0,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(9,"Single room",6450,1,1,0,1,1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(10,"Single room",6000,1,1,1,0,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(11,"Single room",5500,0,0,1,1,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(12,"Single room",5700,1,1,1,1,0);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into rooms values(13,"Single room",5700,1,0,1,1,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(14,"Double room",10700,1,0,0,1,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(15,"Double room",12700,1,1,1,1,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(16,"Double room",12700,0,1,0,1,1);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into rooms values(17,"Double room",12000,0,1,0,1,0);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(18,"Double room",11000,1,1,0,1,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(19,"Double room",10400,0,1,0,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(20,"Double room",10400,0,0,0,1,1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(21,"Deluxe room",18000,1,1,1,1,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(22,"Deluxe room",15500,1,0,1,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(23,"Deluxe room",15350,1,0,0,1,1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(24,"Deluxe room",15200,1,0,0,0,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(25,"Deluxe room",15100,1,0,0,0,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(26,"Deluxe room",16000,1,1,1,1,0);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(27,"Tripple room",15000,1,1,1,1,1);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into rooms values(28,"Tripple room",14200,1,1,1,1,0);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into rooms values(29,"Tripple room",14000,1,1,1,0,0);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(30,"Tripple room",14100,1,1,0,1,0);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into rooms values(31,"Tripple room",13000,0,0,0,1,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(32,"Tripple room",12500,0,0,0,0,1);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into rooms values(33,"Tripple room",12700,1,0,0,0,1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into rooms values(34,"Tripple room",13000,1,0,1,0,1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into rooms values(35,"Super deluxe room",22000,1,1,1,1,1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select* from rooms;
++---------+-------------------+-------+------+------+-----------+--------+------+
+| room_no | type              | price | AC   | Wifi | CarRental | CompBF | Pool |
++---------+-------------------+-------+------+------+-----------+--------+------+
+|       1 | Single room       |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       2 | Double room       |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       3 | Deluxe room       |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       4 | Super deluxe room |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       5 | Tripple room      |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       6 | Single room       |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       7 | Single room       |  6400 |    1 |    1 |         1 |      1 |    1 |
+|       8 | Single room       |  6400 |    0 |    0 |         0 |      1 |    1 |
+|       9 | Single room       |  6450 |    1 |    1 |         0 |      1 |    1 |
+|      10 | Single room       |  6000 |    1 |    1 |         1 |      0 |    1 |
+|      11 | Single room       |  5500 |    0 |    0 |         1 |      1 |    0 |
+|      12 | Single room       |  5700 |    1 |    1 |         1 |      1 |    0 |
+|      13 | Single room       |  5700 |    1 |    0 |         1 |      1 |    0 |
+|      14 | Double room       | 10700 |    1 |    0 |         0 |      1 |    0 |
+|      15 | Double room       | 12700 |    1 |    1 |         1 |      1 |    1 |
+|      16 | Double room       | 12700 |    0 |    1 |         0 |      1 |    1 |
+|      17 | Double room       | 12000 |    0 |    1 |         0 |      1 |    0 |
+|      18 | Double room       | 11000 |    1 |    1 |         0 |      1 |    1 |
+|      19 | Double room       | 10400 |    0 |    1 |         0 |      1 |    1 |
+|      20 | Double room       | 10400 |    0 |    0 |         0 |      1 |    1 |
+|      21 | Deluxe room       | 18000 |    1 |    1 |         1 |      1 |    1 |
+|      22 | Deluxe room       | 15500 |    1 |    0 |         1 |      1 |    1 |
+|      23 | Deluxe room       | 15350 |    1 |    0 |         0 |      1 |    1 |
+|      24 | Deluxe room       | 15200 |    1 |    0 |         0 |      0 |    1 |
+|      25 | Deluxe room       | 15100 |    1 |    0 |         0 |      0 |    0 |
+|      26 | Deluxe room       | 16000 |    1 |    1 |         1 |      1 |    0 |
+|      27 | Tripple room      | 15000 |    1 |    1 |         1 |      1 |    1 |
+|      28 | Tripple room      | 14200 |    1 |    1 |         1 |      1 |    0 |
+|      29 | Tripple room      | 14000 |    1 |    1 |         1 |      0 |    0 |
+|      30 | Tripple room      | 14100 |    1 |    1 |         0 |      1 |    0 |
+|      31 | Tripple room      | 13000 |    0 |    0 |         0 |      1 |    1 |
+|      32 | Tripple room      | 12500 |    0 |    0 |         0 |      0 |    1 |
+|      33 | Tripple room      | 12700 |    1 |    0 |         0 |      0 |    1 |
+|      34 | Tripple room      | 13000 |    1 |    0 |         1 |      0 |    1 |
+|      35 | Super deluxe room | 22000 |    1 |    1 |         1 |      1 |    1 |
++---------+-------------------+-------+------+------+-----------+--------+------+
+35 rows in set (0.00 sec)
+
+mysql> insert into booking values('2022-02-12','2022-02-18','yash',0,0,0,0,0,12000,0);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into booking values('2022-03-12','2022-03-15','spoorti',1,1,1,1,1,15000,0);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into booking values('2022-04-02','2022-04-12','akanksha',1,1,1,1,0,35000,0);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> insert into booking values('2022-05-15','2022-05-16','satyam',1,0,1,1,0,11000,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into booking values('2022-01-15','2022-02-04','ketan',1,1,1,1,0,68000,0);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select* from booking;
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| Checkin    | Checkout   | custname | AC   | Wifi | CarRental | CompBF | Pool | MaxPrice | BookNow |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+| 2022-02-12 | 2022-02-18 | yash     |    0 |    0 |         0 |      0 |    0 |    12000 |       0 |
+| 2022-03-12 | 2022-03-15 | spoorti  |    1 |    1 |         1 |      1 |    1 |    15000 |       0 |
+| 2022-04-02 | 2022-04-12 | akanksha |    1 |    1 |         1 |      1 |    0 |    35000 |       0 |
+| 2022-05-15 | 2022-05-16 | satyam   |    1 |    0 |         1 |      1 |    0 |    11000 |       0 |
+| 2022-01-15 | 2022-02-04 | ketan    |    1 |    1 |         1 |      1 |    0 |    68000 |       0 |
++------------+------------+----------+------+------+-----------+--------+------+----------+---------+
+5 rows in set (0.00 sec)
